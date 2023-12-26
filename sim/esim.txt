@@ -1,0 +1,60 @@
+To change the esim card number 
+
+adb cmd :  adb shell service telecom
+$adb devices
+>List of devices attached
+>emulator-5554 device
+
+$static const char kDefaultPhonePrefix[] = â1555521â;
+
+And to filter the ones only related to the SIM card we just need to:
+$adb shell getprop | grep "gsm"
+
+
+
+1. First, you need to check if youâve got the ANDROID_HOME path defined:
+
+$echo $ANDROID_HOME
+
+It should print your Android SDK path:
+
+/Users/$(whoami)/Library/Android/sdk
+
+In case you donât have your ANDROID_HOME defined youâll need to set it. First, you need to find where your Android SDK folder is located. You can easily check this by opening Android Studio and after selecting your project right click on âOpen Module Settingsâ and then on the left bar select on âSDK Locationâ.
+
+After copying it, open a new console and type:
+
+$export ANDROID_HOME=<your_sdk_path>
+
+And then add it to the environment variables PATH:
+
+$export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+and save it (so you donât need to enter these commands every time you open a new console):
+
+$source ~/.bash_profile
+
+2. Next, we will set the EMULATOR variable as well as we did for the ANDROID_HOME :
+
+$export EMULATOR=$ANDROID_HOME/emulator
+
+and then export the LD_LIBARY_PATH
+
+$export LD_LIBRARY_PATH=$EMULATOR/lib64:$EMULATOR/lib64/qt/lib
+
+3. Now you just need to set the phone_number option with the phone number that you want to use on the emulator:
+
+$EMULATOR//qemu/darwin-x86_64/qemu-system-x86_64 -avd <your_avd_name> -phone-number 351990000001
+
+In order to get <your_avd_name> youâll need to see all the AVDâs available:
+
+$emulator -list-avds
+
+In my case, it will output Pixel_2_API_Q, so my command will be:
+
+$EMULATOR//qemu/darwin-x86_64/qemu-system-x86_64 -avd Pixel_2_API_Q -phone-number 351990000001
+
+No need to add the â+â or â00â for the country code, Android will do that automatically for you.
+
+
+this scope just to add number phone to your simulator : we have just to find the changed number 
