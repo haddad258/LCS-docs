@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".activity.SignUpActivity">
+
+    <!-- Title TextView -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/metropolis_bold"
+        android:text="Sign up"
+        android:textColor="@color/tiers"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- LinearLayout for Input Fields and Buttons -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <!-- Full Name EditText -->
+        <EditText
+            android:id="@+id/nameEt_signUpPage"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="15sp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textColor="@color/tiers"
+            android:background="@drawable/input_style"
+            android:fontFamily="@font/metropolis_regular"
+            android:hint="Full Name"
+            android:textColorHint="@color/black"
+            android:inputType="textPersonName"
+            android:maxLines="1" />
+
+        <!-- Email EditText -->
+        <EditText
+            android:layout_marginTop="10dp"
+            android:id="@+id/emailEt_signUpPage"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="15sp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textColor="@color/black"
+            android:background="@drawable/input_style"
+            android:fontFamily="@font/metropolis_regular"
+            android:textColorHint="@color/black"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:maxLines="1" />
+
+        <!-- CIN EditText -->
+        <EditText
+            android:layout_marginTop="10dp"
+            android:id="@+id/cin"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="15sp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textColor="@color/tiers"
+            android:background="@drawable/input_style"
+            android:fontFamily="@font/metropolis_regular"
+            android:hint="CIN"
+            android:textColorHint="@color/black"
+            android:inputType="text"
+            android:maxLines="1" />
+
+        <!-- Password EditText -->
+        <EditText
+            android:layout_marginTop="10dp"
+            android:id="@+id/PassEt_signUpPage"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="15sp"
+            android:textColor="@color/tiers"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:background="@drawable/input_style"
+            android:fontFamily="@font/metropolis_regular"
+            android:hint="Password"
+            android:textColorHint="@color/black"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+
+        <!-- Confirm Password EditText -->
+        <EditText
+            android:layout_marginTop="10dp"
+            android:id="@+id/cPassEt_signUpPage"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="15sp"
+            android:textColor="@color/tiers"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:background="@drawable/input_style"
+            android:fontFamily="@font/metropolis_regular"
+            android:hint="Confirm Password"
+            android:textColorHint="@color/black"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+
+        <!-- Rounded Sign Up Button -->
+
+        <!-- Sign In TextView -->
+
+        <Button
+            android:id="@+id/signUpBtn_signUp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/primary"
+            android:elevation="10dp"
+            android:text="Sign Up"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/metropolis_regular"
+                android:text="Have an Account? "
+                android:textColor="@color/tiers"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/signInTv_signUpPage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/metropolis_regular"
+                android:text="Sign in"
+                android:textColor="@color/primary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

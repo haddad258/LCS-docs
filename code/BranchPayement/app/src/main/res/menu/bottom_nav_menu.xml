@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeMenu"
+        android:title="Home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:checked="false"
+        android:iconTint="@color/menu_item_color"/>
+
+    <item
+        android:id="@+id/shopMenu"
+        android:title="Offres"
+        android:icon="@drawable/icon_productbox"
+        android:checked="false"
+        android:iconTint="@color/menu_item_color"/>
+
+    <item
+        android:id="@+id/bagMenu"
+        android:title="bag"
+        android:icon="@drawable/shoppingcart"
+        android:checked="false"
+        android:iconTint="@color/menu_item_color"/>
+
+    <item
+        android:id="@+id/favMenu"
+        android:title="SoftSim"
+        android:icon="@drawable/simprofiles"
+        android:checked="false"
+        android:iconTint="@color/menu_item_color"/>
+    <item
+        android:id="@+id/profiles"
+        android:title="Profiles"
+        android:icon="@drawable/profile"
+        android:checked="false"
+        android:iconTint="@color/menu_item_color"/>
+
+
+
+
+</menu>

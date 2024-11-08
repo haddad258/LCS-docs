@@ -1,0 +1,14 @@
+{
+  "name": "payment",
+  "version": "1.0.0",
+  "description": "payment sdk",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.3"
+  }
+}

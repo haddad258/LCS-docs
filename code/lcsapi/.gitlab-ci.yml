@@ -1,0 +1,101 @@
+stages:
+  - sync
+  - build
+  - deploy
+
+
+sync-staging:
+    stage: sync
+    variables:
+        STACK_ENV: dev
+    script:
+          - ssh root@37.27.52.106 "mkdir -p /home/lcs/projects/lcsapi"
+          - rsync -az -e 'ssh' --delete --include=.env --exclude-from=.gitignore * root@37.27.52.106:/home/lcs/projects/lcsapi/
+    environment:
+        name: lcsapi-dev
+        url: https://api.dev.lcs-system.com/
+    when: manual
+    only:
+        - develop
+    tags:
+        - lcs-runner
+
+build-staging:
+    stage: build
+    variables:
+        STACK_ENV: dev
+    script:
+          - ssh root@37.27.52.106 "cd /home/lcs/projects/lcsapi && npm install"
+    environment:
+        name: lcsapi-dev
+        url: https://api.dev.lcs-system.com/
+    when: manual
+    only:
+        - develop
+    tags:
+        - lcs-runner
+
+deploy-staging:
+    stage: deploy
+    variables:
+        STACK_ENV: dev
+    script:
+          - ssh root@37.27.52.106 "cd /home/lcs/projects/lcsapi && npx sequelize db:migrate:undo:all && npx sequelize db:migrate && npx sequelize-cli db:seed:all"
+          - ssh root@37.27.52.106 "cd /home/lcs/projects/lcsapi && pm2 restart LcsAPI"
+    environment:
+        name: lcsapi-dev
+        url: https://api.dev.lcs-system.com/
+    when: manual
+    only:
+        - develop
+    tags:
+        - lcs-runner
+
+
+sync-rec:
+    stage: sync
+    variables:
+        STACK_ENV: dev
+    script:
+          - ssh root@37.27.52.106 "mkdir -p /home/lcs/projects/lcsapi-rec"
+          - rsync -az -e 'ssh' --delete --include=.env --exclude-from=.gitignore * root@37.27.52.106:/home/lcs/projects/lcsapi-rec/
+    environment:
+        name: lcsapi-rec
+        url: https://api.rec.lcs-system.com/
+    when: manual
+    only:
+        - rec
+    tags:
+        - lcs-runner
+
+build-rec:
+    stage: build
+    variables:
+        STACK_ENV: dev
+    script:
+          - ssh root@37.27.52.106 "cd /home/lcs/projects/lcsapi-rec && npm install"
+    environment:
+        name: lcsapi-rec
+        url: https://api.rec.lcs-system.com/
+    when: manual
+    only:
+        - rec
+    tags:
+        - lcs-runner
+
+deploy-rec:
+    stage: deploy
+    variables:
+        STACK_ENV: dev
+    script:
+          - ssh root@37.27.52.106 "cd /home/lcs/projects/lcsapi-rec && npx knex migrate:rollback && npx knex migrate:latest && npx knex seed:run" # && npx knex seed:run
+          - ssh root@37.27.52.106 "cd /home/lcs/projects/lcsapi-rec && pm2 restart LcsAPIrec"
+    environment:
+        name: lcsapi-rec
+        url: https://api.rec.lcs-system.com/
+    when: manual
+    only:
+        - rec
+    tags:
+        - lcs-runner
+

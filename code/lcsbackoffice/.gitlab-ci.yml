@@ -1,0 +1,37 @@
+stages:
+  - sync
+  - build
+  - deploy
+
+
+sync-staging:
+    stage: sync
+    variables:
+        STACK_ENV: dev
+    script:
+          - ssh root@37.27.52.106 "mkdir -p /home/lcs/projects/lcsbackoffice"
+          - rsync -az -e 'ssh' --delete --include=.env --exclude-from=.gitignore * root@37.27.52.106:/home/lcs/projects/lcsbackoffice/
+    environment:
+        name: lcsbo-dev
+        url: https://bo.dev.lcs-system.com/
+    when: manual
+    only:
+        - develop
+    tags:
+        - lcs-runner
+
+build-staging:
+    stage: build
+    variables:
+        STACK_ENV: dev
+    script:
+          - ssh root@37.27.52.106 "cd /home/lcs/projects/lcsbackoffice && npm install --legacy-peer-deps"
+          - ssh root@37.27.52.106 "cd /home/lcs/projects/lcsbackoffice && npm run build"
+    environment:
+        name: lcsapi-dev
+        url: https://bo.dev.lcs-system.com/
+    when: manual
+    only:
+        - develop
+    tags:
+        - lcs-runner

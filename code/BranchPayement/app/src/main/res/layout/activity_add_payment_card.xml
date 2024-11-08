@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Payment Card"
+        android:textColor="@color/primary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp" />
+
+    <EditText
+        android:id="@+id/editTextCardHolderName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cardholder Name"
+        android:textColor="@color/primary"
+        android:backgroundTint="@color/secondry"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp" />
+
+
+
+    <EditText
+        android:id="@+id/editTextCardNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Card Number"
+        android:maxLength="16"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/primary"
+        android:backgroundTint="@color/secondry"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp" />
+
+    <EditText
+        android:id="@+id/editTextExpiryDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:hint="Expiry Date (MM/YY)"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/primary"
+        android:backgroundTint="@color/secondry"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp" />
+
+    <EditText
+        android:id="@+id/editTextCVV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:hint="CVV"
+        android:maxLength="3"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/primary"
+        android:backgroundTint="@color/secondry"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp" />
+
+    <Button
+        android:id="@+id/buttonAddCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Card"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

@@ -1,0 +1,84 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/newRecView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/metropolis_regular"
+        android:text="Select Payment Mode"
+        android:textColor="@color/mainText"
+        android:textSize="16sp"
+        android:layout_margin="20dp" />
+
+    <Spinner
+        android:id="@+id/paymentModesSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="15sp"
+        android:textColor="@color/tiers"
+        android:background="@drawable/select_style"
+        android:fontFamily="@font/metropolis_regular"
+        android:hint="Select Payment Mode"
+        android:maxLines="1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/metropolis_regular"
+        android:text="Select Payment Card"
+        android:textColor="@color/mainText"
+        android:layout_margin="20dp"
+        android:textSize="16sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/paymentModesRecView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:scrollbars="horizontal"
+        android:orientation="horizontal" />
+
+    <CheckBox
+        android:id="@+id/newSubscriptionCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Subscribe to the new service"
+        android:textColor="@color/mainText"
+        android:textSize="16sp"
+        android:fontFamily="@font/metropolis_regular"
+        android:layout_marginTop="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/ConfirmPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="Confirm"
+            android:drawableStart="@drawable/ic_baseline_add_24"
+            android:backgroundTint="@color/tiers"/>
+    </LinearLayout>
+
+</LinearLayout>

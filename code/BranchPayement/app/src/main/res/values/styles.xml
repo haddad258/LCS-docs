@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">20dp</item>
+        <item name="android:textColor">@color/secondry</item>
+        <item name="android:textSize">16sp</item> <!-- Set text size as needed -->
+        <item name="android:padding">8dp</item> <!-- Set padding as needed -->
+    </style>
+    <style name="ImageRoundedCorners">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">0dp</item>
+    <item name="cornerSizeTopLeft">5dp</item>
+    <item name="cornerSizeTopRight">5dp</item>
+    <item name="cornerSizeBottomLeft">5dp</item>
+    <item name="cornerSizeBottomRight">5dp</item>
+</style>
+
+</resources>

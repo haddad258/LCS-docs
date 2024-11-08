@@ -1,0 +1,9 @@
+{
+  "name": "com.invcase",
+  "version": "0.0.0",
+  "description": "invcase",
+  "main": "src/index",
+  "author": " <> ()",
+  "license": "UNLICENSED",
+  "homepage": "#readme"
+}
